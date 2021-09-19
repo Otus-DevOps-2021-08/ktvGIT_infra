@@ -1,2 +1,9 @@
 # ktvGIT_infra
 ktvGIT Infra repository
+bastion_IP = 62.84.114.168
+someinternalhost_IP = 10.128.0.18
+
+Вариант решения для подключения из консоли при помощи команды вида ssh someinternalhost из локальной консоли рабочего устройства:
+1. windows: putty.exe -A appuser@<ip bastion> -i <path to>appuser.ppk -m <path to some file>run.sh -t
+   ssh <ip someinternalhost> (line in run.sh)
+2. Unix: ssh -i ~/.ssh/appuser -A -J appuser@<ip bastion> appuser@<ip someinternalhost>
