@@ -1,0 +1,40 @@
+#cloud-config
+
+# run commands
+#   will be interpreted by 'sh'
+
+users:
+  - default
+  - name: appuser
+    gecos: Bar B. Foo
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    ssh_import_id: None
+    shell: /bin/bash
+    # lock_passwd: false
+    # passwd: $6$j212w
+    ssh_authorized_keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJE2Ww5118EEaOj2FwRII352vQP3HvDTQwNZvsym6/+1d4KRI990OJz6tYJwDbUDLomSziRex0sDTA2Ixs+eQVo7ef0VpgXqxSYPuvSqfGNBaZtw7SBH2cSp1d0mRdbM+gCQr9+Co1XFWgfZgRkp9ZezXBKveU1YdSao0s+n5vdg06nGZu47VeVsd8HNzysyJ3nmrdvOE8Zanp7lVD+wHhc7XJlVTBsYICSf72vhP5obzh+USDwslXR3ZC3XMau3vL/aiHSQtRVwUJIVTmH/GXxM4eRtgc1qqfRJwE4ESVFBkZl+w6qvgh3QRi7dGERj68nnspJlK8DVOR44iMAjud appuser
+
+
+packages:
+  - git
+  - mc
+
+runcmd:
+ - sudo apt install -y ruby-full ruby-bundler build-essential
+ - wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+ - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+ - sudo apt-get update
+ - sudo apt-get install -y mongodb-org
+ - sudo systemctl start mongod
+ - cd ~
+ - git clone -b monolith https://github.com/express42/reddit.git
+ - cd reddit && bundle install
+ - puma -d
+#  - [ ls, -l, / ]
+#  - [ sh, -xc, "echo $(date) ': hello world!'" ]
+#  - [ sh, -c, echo "=========hello world'=========" ]
+#  - ls -l /root
+#  - mkdir /run/mydir
+#  - [ wget, "http://slashdot.org", -O, /run/mydir/index.html ]
