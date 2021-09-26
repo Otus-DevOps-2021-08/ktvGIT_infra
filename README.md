@@ -12,9 +12,11 @@ someinternalhost_IP = 10.128.0.18
 -----For cloud-testapp------------------
 testapp_IP = 62.84.114.85
 testapp_port = 9292
+
 -----packer-base -----------------------
 Создан packer шаблонизированый образ на основани ubuntu16.json
 Внутри mongodb ruby
 Значения переменных шаблона вынесены в файл variables.json
 variables.json занесен в .gitignore
 variables.json.examples содеражат вымышленные значения
+
