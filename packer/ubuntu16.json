@@ -17,9 +17,12 @@
       {
         "type": "shell",
         "script": "scripts/install_ruby.sh",
-        "execute_command": "sudo {{.Path}}"
+        "execute_command": "sudo {{.Path}}",
+        "pause_before": "5s"
       },
+
       {
+        "pause_before": "5s",
         "type": "shell",
         "script": "scripts/install_mongodb.sh",
         "execute_command": "sudo {{.Path}}"
