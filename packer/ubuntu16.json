@@ -3,10 +3,10 @@
       {
         "type": "yandex",
         "service_account_key_file": "{{service_account_key_file}}",
-        "folder_id": "{{b1ghupcpsoarvins3d2u}}",
-        "subnet_id": "{{e9bl38q6mpiv22md4u65}}",
+        "folder_id": "{{folder_id}}",
+        "subnet_id": "{{subnet_id}}",
         "use_ipv4_nat":        true,
-        "source_image_family": "{{ubuntu-1604-lts}}",
+        "source_image_family": "{{source_image_family}}",
         "image_name": "reddit-base-{{timestamp}}",
         "image_family": "reddit-base",
         "ssh_username": "ubuntu",
