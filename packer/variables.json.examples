@@ -1,0 +1,6 @@
+{
+    "service_account_key_file": "/var/otus/keys/key_for_ya_acc_serv/key.json",
+    "source_image_family": "ubuntu-1604-lts",
+    "folder_id": "b1ghupcpsoarvins3d2u",
+    "subnet_id": "e9bl38q6mpiv22md4u65"
+}
