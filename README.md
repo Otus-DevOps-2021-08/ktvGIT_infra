@@ -1,6 +1,6 @@
 # ktvGIT_infra
 
-## For cloud-bastion.ovpn
+## cloud-bastion.ovpn
 ktvGIT Infra repository
 bastion_IP = 62.84.114.168
 someinternalhost_IP = 10.128.0.18
@@ -10,7 +10,7 @@ someinternalhost_IP = 10.128.0.18
    ssh <ip someinternalhost> (line in run.sh)
 2. Unix: ssh -i ~/.ssh/appuser -A -J appuser@<ip bastion> appuser@<ip someinternalhost>
 
-## For cloud-testapp
+## cloud-testapp
 testapp_IP = 62.84.114.85
 testapp_port = 9292
 
