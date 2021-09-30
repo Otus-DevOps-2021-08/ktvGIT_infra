@@ -20,3 +20,6 @@ testapp_port = 9292
 variables.json занесен в .gitignore
 variables.json.examples содеражат вымышленные значения
 
+-----terraform -----------------------
+https://www.terraform.io/docs/language/expressions/dynamic-blocks.html
+https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/lb_network_load_balancer
