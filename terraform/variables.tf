@@ -28,7 +28,7 @@ variable "private_key_for_conn_provisioner" {
 }
 
 variable "app_instances_count" {
-  default = 2
+  default = 1
 }
 
 variable "external_app_port" {
