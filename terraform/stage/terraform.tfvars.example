@@ -1,0 +1,14 @@
+cloud_id  = ""
+
+folder_id = ""
+# folder_id = ""
+# zone = "ru-central1-a"
+image_id                         = "l"
+public_key_path                  = "./ubuntu.pub"
+subnet_id                        = ""
+service_account_key_file         = "./key.json"
+# private_key_for_conn_provisioner = "~/.ssh/ubuntu"
+private_key_path                  = "~/.ssh/ubuntu"
+
+app_disk_image                   =""
+db_disk_image                    =""
