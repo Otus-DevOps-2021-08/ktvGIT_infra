@@ -9,9 +9,9 @@
 app:
   hosts:
     appserveryml:
-      ansible_host: 178.154.229.1.37
+      ansible_host: 84.252.129.22
 
 db:
   hosts:
     dbserveryml:
-      ansible_host: 178.154.230.1.52
+      ansible_host: 178.154.200.16
