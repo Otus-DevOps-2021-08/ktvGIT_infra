@@ -22,6 +22,8 @@ variable image_id {
 variable subnet_id {
   description = "Subnet"
 }
+
+
 variable service_account_key_file {
   description = "key.json"
 }
@@ -32,4 +34,12 @@ variable app_disk_image {
 variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "reddit-db-base"
+}
+
+variable "private_key_for_conn_provisioner" {
+  description = "private_key_for_conn_provisioner"
+}
+variable "app_instances_count" {
+  description = "app_instances_count"
+  default = 1
 }

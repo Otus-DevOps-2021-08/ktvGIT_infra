@@ -8,3 +8,7 @@ default = "reddit-db-base"
 variable subnet_id {
 description = "Subnets for modules"
 }
+
+variable "private_key_for_conn_provisioner" {
+  description = "private_key_for_conn_provisioner"
+}

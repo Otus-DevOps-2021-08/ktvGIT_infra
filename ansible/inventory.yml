@@ -1,0 +1,17 @@
+---
+  # app:
+  #  hosts:
+  #    84.201.132.177
+  # db:
+  #   hosts:
+  #     62.84.116.29
+
+app:
+  hosts:
+    appserveryml:
+      ansible_host: 178.154.229.1.37
+
+db:
+  hosts:
+    dbserveryml:
+      ansible_host: 178.154.230.1.52

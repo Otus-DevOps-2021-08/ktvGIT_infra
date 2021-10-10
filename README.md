@@ -24,3 +24,9 @@ variables.json.examples содеражат вымышленные значени
 ## terraform
 https://www.terraform.io/docs/language/expressions/dynamic-blocks.html
 https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/lb_network_load_balancer
+## ansible
+Ансибл, для удаления фалов предложил использовать отдельный модуль.
+   - name: Ansible delete file example
+     file:
+      path: "~/reddit"
+      state: absent

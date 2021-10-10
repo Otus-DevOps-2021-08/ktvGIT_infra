@@ -8,3 +8,15 @@ variable app_disk_image {
 variable subnet_id {
   description = "Subnets for modules"
 }
+
+variable app_instances_count {
+  description = "app_instances_count"
+}
+
+variable "private_key_for_conn_provisioner" {
+  description = "private_key_for_conn_provisioner"
+}
+
+variable database_url {
+  description = "Database url for reddit app"
+}
