@@ -10,4 +10,4 @@
      file:
       path: "~/reddit"
       state: absent
-      
+
