@@ -1,0 +1,27 @@
+{
+  "all": {
+    "children": [
+      "app",
+      "db",
+      "ungrouped"
+    ]
+  },
+  "app": {
+    "hosts": [
+      "appserver"
+    ]
+  },
+  "db": {
+    "hosts": [
+      "dbserver"
+    ]
+  },
+  "_meta": {
+    "hostvars": {      
+      "appserver": {"ansible_host": "84.201.130.21"                        
+      },
+      "dbserver": {"ansible_host": "62.84.116.101"
+      }
+    }
+  }
+}

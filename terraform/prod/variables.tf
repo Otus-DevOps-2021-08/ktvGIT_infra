@@ -33,3 +33,12 @@ variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "reddit-db-base"
 }
+
+variable "private_key_for_conn_provisioner" {
+  description = "private_key_for_conn_provisioner"
+}
+
+variable "app_instances_count" {
+  description = "papp_instances_count"
+  default = 1
+}
