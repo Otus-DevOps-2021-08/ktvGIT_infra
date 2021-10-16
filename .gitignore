@@ -4,3 +4,8 @@ packer/variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+*.retry
+.vscode
+ansible/reddit_app2.yml
+ansible/inventory_dinamic.json.bak2
+ansible/inventory_dinamic.json.bak1

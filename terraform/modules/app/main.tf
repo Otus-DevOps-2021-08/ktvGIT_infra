@@ -29,13 +29,13 @@ resource "yandex_compute_instance" "app" {
   }
 
 #Ставим приложение
-connection {
-    type        = "ssh"
-    host        = self.network_interface.0.nat_ip_address
-    user        = "ubuntu"
-    agent       = false
-    private_key = file(var.private_key_for_conn_provisioner)
-  }
+# connection {
+#     type        = "ssh"
+#     host        = self.network_interface.0.nat_ip_address
+#     user        = "ubuntu"
+#     agent       = false
+#     private_key = file(var.private_key_for_conn_provisioner)
+#   }
 #разные не рабочие способы  прокинуть адрес базы в приложение---------------------
   # provisioner "local-exec" {
   #   command = "echo 'DATABASE_URL=${var.database_url}:27017' > ${path.module}/files/app_env.conf.tmp"
@@ -48,24 +48,24 @@ connection {
 
 #  provisioner "remote-exec" {
 #     inline = [
-#       "DATABASE_URL=${var.database_url}:27017"      
+#       "DATABASE_URL=${var.database_url}:27017"
 #     ]
 #   }
 #--------------------------------------------------------
- provisioner "remote-exec" {
-    inline = [
-      "echo 'DATABASE_URL=${var.database_url}:27017' > /tmp/app_env.conf"
-    ]
-  }
+#  provisioner "remote-exec" {
+#     inline = [
+#       "echo 'DATABASE_URL=${var.database_url}:27017' > /tmp/app_env.conf"
+#     ]
+#   }
 
-  provisioner "file" {
-    source      = "${path.module}/files/puma.service"
-    destination = "/tmp/puma.service"
-  }
+#   provisioner "file" {
+#     source      = "${path.module}/files/puma.service"
+#     destination = "/tmp/puma.service"
+#   }
 
-  provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
+#   provisioner "remote-exec" {
+#     script = "${path.module}/files/deploy.sh"
+#   }
 
 
 }

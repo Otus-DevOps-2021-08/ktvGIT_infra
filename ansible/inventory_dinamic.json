@@ -17,10 +17,10 @@
     ]
   },
   "_meta": {
-    "hostvars": {      
-      "appserver": {"ansible_host": "84.201.130.21"                        
+    "hostvars": {
+      "appserver": {"ansible_host": "62.84.112.102"
       },
-      "dbserver": {"ansible_host": "62.84.116.101"
+      "dbserver": {"ansible_host": "62.84.112.211"
       }
     }
   }
