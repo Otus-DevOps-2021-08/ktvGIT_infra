@@ -9,3 +9,6 @@ packer/variables.json
 ansible/reddit_app2.yml
 ansible/inventory_dinamic.json.bak2
 ansible/inventory_dinamic.json.bak1
+packer/validate.pwi
+packer/validate.hwm
+packer/validate.pwd
