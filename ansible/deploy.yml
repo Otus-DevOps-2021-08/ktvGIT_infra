@@ -1,0 +1,34 @@
+---
+
+# deploy app
+
+- name: Deploy App
+  hosts: app
+#  tags: deploy-tag
+  tasks:
+    - name: Установка пакетов
+    #  yum: pkg={{ item }} state=latest
+    #  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+      become: true
+      apt: pkg={{ item }} state=latest
+      with_items:
+       - git
+       - mc
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Fetch the latest version of application code
+      git:
+        repo: 'https://github.com/express42/reddit.git'
+        dest: /home/ubuntu/reddit
+        version: monolith
+      notify: restart puma
+
+    - name: bundle install
+      bundler:
+        state: present
+        chdir: /home/ubuntu/reddit
+
+  handlers:
+  - name: restart puma
+    become: true
+    systemd: name=puma state=restarted

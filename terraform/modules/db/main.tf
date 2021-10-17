@@ -24,15 +24,15 @@ resource "yandex_compute_instance" "db" {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
-   connection {
-    type        = "ssh"
-    host        = self.network_interface.0.nat_ip_address
-    user        = "ubuntu"
-    agent       = false
-    private_key = file(var.private_key_for_conn_provisioner)
-  }
+  #  connection {
+  #   type        = "ssh"
+  #   host        = self.network_interface.0.nat_ip_address
+  #   user        = "ubuntu"
+  #   agent       = false
+  #   private_key = file(var.private_key_for_conn_provisioner)
+  # }
 
-  provisioner "remote-exec" {
-    script = "${path.module}/files/set_db_ip.sh"
-  }
+  # provisioner "remote-exec" {
+  #   script = "${path.module}/files/set_db_ip.sh"
+  # }
 }
