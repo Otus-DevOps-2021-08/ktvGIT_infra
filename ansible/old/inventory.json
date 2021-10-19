@@ -13,22 +13,19 @@
 
     "all": {
       "hosts": {
-      
+
       },
       "children": {
         "app": {
-          "hosts": {            
+          "hosts": {
             "appserver": null
           }
         },
         "db": {
-          "hosts": {            
+          "hosts": {
             "dbserver": null
           }
         }
       }
     }
   }
-
-
-

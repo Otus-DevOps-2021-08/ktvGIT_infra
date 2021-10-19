@@ -12,3 +12,5 @@ ansible/inventory_dinamic.json.bak1
 packer/validate.pwi
 packer/validate.hwm
 packer/validate.pwd
+jdauphant.nginx
+vault.key

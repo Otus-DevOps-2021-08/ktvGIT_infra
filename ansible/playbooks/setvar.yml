@@ -1,0 +1,35 @@
+- name         : Test var
+  hosts        : all
+  gather_facts : no
+  vars:
+    myvariable : false
+  tasks:
+    - name: param1
+      set_fact:
+        myvariable: "{{param1}}"
+      when: param1 is defined
+
+
+    - name: param2
+      set_fact:
+        myvariable: "{{ param2 if not myvariable else myvariable + ',' + param2 }}"
+      when: param2 is defined
+
+
+
+    - name: param3
+      set_fact:
+        myvariable: "{{ param3 if not myvariable else myvariable + ',' + param3 }}"
+      when: param3 is defined
+
+
+
+    - name: default
+      set_fact:
+        myvariable: "default"
+      when: not myvariable
+
+
+
+    - debug:
+       "msg": var={{myvariable}}
