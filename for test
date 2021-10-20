@@ -6,4 +6,4 @@ ERROR! - you can use --ignore-errors to skip failed roles and finish processing 
 Could not fetch inspec profile in "otus-homeworks/homeworks/ansible-3".
 Error: Process completed with exit code 1.
 API server (https://galaxy.ansible.com/api/): HTTP Error 530:
-again API server galaxy.ansible api  HTTP Error 530
+again API server galaxy api  HTTP Error 530
