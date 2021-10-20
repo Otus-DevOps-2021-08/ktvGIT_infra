@@ -15,7 +15,7 @@
         - name: clean file
           copy:
             dest: "{{ output_file }}"
-            content: 'hostname,distribution,version,release'
+            content: "hostname,distribution,version,release"
             owner: "{{ whoami.stdout }}"
           run_once: yes
 
@@ -30,7 +30,7 @@
             #   {{ ansible_distribution_version }},\
             #   {{ ansible_distribution_release }}"
             line: "{{ hostvars[inventory_hostname].ansible_host }},\
-            {{ ansible_hostname }},\
+              {{ ansible_hostname }},\
               {{ ansible_distribution }},\
               {{ ansible_distribution_version }},\
               {{ ansible_distribution_release }}"
@@ -39,7 +39,7 @@
 
         - name: Debug registered var
           set_fact:
-          # debug:
+            # debug:
             # msg: "{{ hostvars[inventory_hostname].ansible_host }}"
             # var="{{ hostvars[inventory_hostname].ansible_host }}"
             hostn: "{{ hostvars[inventory_hostname].ansible_host if not hostn else hostn + 'qqq' }}"
