@@ -3,15 +3,16 @@
 - name: Configure App
   hosts: app
   become: true
-
+# -----------ansible02-----------------------------------
   # vars:
   #  db_host: 10.132.0.2
   roles:
    - app
-   - jdauphant.nginx
+#  add nginx for balansir
+  #  - jdauphant.nginx
 
 
-
+# -----------ansible02-----------------------------------
 # - name: Configure hosts & deploy application
 #   hosts: app
 #   vars:
