@@ -9,7 +9,7 @@
   roles:
    - app
 #  add nginx for balansir
-  #  - jdauphant.nginx
+   - jdauphant.nginx
 
 
 # -----------ansible02-----------------------------------

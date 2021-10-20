@@ -10,10 +10,11 @@
     #  yum: pkg={{ item }} state=latest
     #  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
       become: true
-      apt: pkg={{ item }} state=latest
+    #  apt: pkg={{ item }} state=latest
+      apt: pkg={{ item }} state=present
       with_items:
-       - git
-       - mc
+        - git
+        - mc
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
     - name: Fetch the latest version of application code
@@ -29,6 +30,6 @@
         chdir: /home/ubuntu/reddit
 
   handlers:
-  - name: restart puma
-    become: true
-    systemd: name=puma state=restarted
+    - name: restart puma
+      become: true
+      systemd: name=puma state=restarted
