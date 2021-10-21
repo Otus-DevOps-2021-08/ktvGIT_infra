@@ -1,0 +1,43 @@
+---
+# app
+- name: Configure App
+  hosts: app
+  become: true
+# -----------ansible02-----------------------------------
+  # vars:
+  #  db_host: 10.132.0.2
+  roles:
+   - app
+#  add nginx for balansir
+   - jdauphant.nginx
+
+
+# -----------ansible02-----------------------------------
+# - name: Configure hosts & deploy application
+#   hosts: app
+#   vars:
+#    db_host: 178.154.201.244
+#   tasks:
+#     - name: Add unit file for Puma
+#       become: true
+#       copy:
+#         src: files/puma.service
+#         dest: /etc/systemd/system/puma.service
+#       # tags: app-tag
+#       notify: reload puma
+
+#     - name: Add config for DB connection
+#       template:
+#         src: templates/db_config.j2
+#         dest: /home/ubuntu/db_config
+#       # tags: app-tag
+
+#     - name: enable puma
+#       become: true
+#       systemd: name=puma enabled=yes
+#       # tags: app-tag
+
+#   handlers:
+#   - name: reload puma
+#     become: true
+#     systemd: name=puma state=restarted

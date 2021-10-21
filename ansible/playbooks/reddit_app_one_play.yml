@@ -2,8 +2,8 @@
 - name: Configure hosts & deploy application # <-- Словесное описание сценария(name)
   hosts: all # <-- Для каких хостов будут выполняться описанные ниже таски (hosts)
   vars:
-   mongo_bind_ip: 0.0.0.0 # <-- Переменная задается в блоке vars
-   db_host: 62.84.112.211 # <-- подставьте сюда ваш IP
+    mongo_bind_ip: 0.0.0.0 # <-- Переменная задается в блоке vars
+    db_host: 62.84.112.211 # <-- подставьте сюда ваш IP
   tasks: # <-- Блок тасков (заданий), которые будут выполняться для данных хостов
     - name: Change mongo config file
       become: true # <-- Выполнить задание от root
@@ -29,8 +29,8 @@
 
     - name: Add config for DB connection
       template:
-       src: templates/db_config.j2
-       dest: /home/ubuntu/db_config
+        src: templates/db_config.j2
+        dest: /home/ubuntu/db_config
       tags: app-tag
 
     - name: enable puma
@@ -40,7 +40,7 @@
 
     - name: Fetch the latest version of application code
       git:
-        repo: 'https://github.com/express42/reddit.git'
+        repo: "https://github.com/express42/reddit.git"
         dest: /home/ubuntu/reddit
         version: monolith # <-- Указываем нужную ветку
       tags: deploy-tag
