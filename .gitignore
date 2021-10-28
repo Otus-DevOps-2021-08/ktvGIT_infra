@@ -16,3 +16,10 @@ jdauphant.nginx
 vault.key
 inventory.bak1
 inventory.bak2
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
